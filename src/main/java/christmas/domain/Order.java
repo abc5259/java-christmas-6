@@ -16,4 +16,22 @@ public class Order {
         }
         this.orderItems = orderItems;
     }
+
+    public int getTotalAmount() {
+        return orderItems.stream()
+                .mapToInt(OrderItem::getTotalAmount)
+                .sum();
+    }
+
+    public boolean contains(Category category) {
+        return orderItems.stream()
+                .anyMatch(orderItem -> orderItem.isEqualCategory(category));
+    }
+
+    public int getCategoryMenuCount(Category category) {
+        return orderItems.stream()
+                .filter(orderItem -> orderItem.isEqualCategory(category))
+                .mapToInt(OrderItem::count)
+                .sum();
+    }
 }
