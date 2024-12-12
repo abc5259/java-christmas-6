@@ -1,5 +1,7 @@
 package christmas.domain;
 
+import java.util.Arrays;
+
 public enum Menu {
     양송이수프("양송이수프", 6000, Category.APPETIZER),
     타파스("타파스", 5500, Category.APPETIZER),
@@ -26,6 +28,13 @@ public enum Menu {
         this.name = name;
         this.price = price;
         this.category = category;
+    }
+
+    public static Menu findByName(String name) {
+        return Arrays.stream(Menu.values())
+                .filter(menu -> menu.name.equals(name))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("유효하지 않은 주문입니다. 다시 입력해 주세요."));
     }
 
     public String getName() {

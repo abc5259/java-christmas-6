@@ -1,6 +1,7 @@
 package christmas.controller;
 
 import christmas.domain.Date;
+import christmas.domain.Order;
 import christmas.view.OutputView;
 
 public class ChristmasController {
@@ -17,6 +18,7 @@ public class ChristmasController {
     public void process() {
         outputView.printStartMessage();
         Date date = iteratorInputHandler.inputDate();
-        
+        Order order = iteratorInputHandler.inputOrder();
     }
 }
+

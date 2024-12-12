@@ -1,7 +1,9 @@
 package christmas.controller;
 
 import christmas.converter.StringToDateConverter;
+import christmas.converter.StringToOrderConverter;
 import christmas.domain.Date;
+import christmas.domain.Order;
 import christmas.view.InputView;
 
 public class IteratorInputHandler {
@@ -21,4 +23,10 @@ public class IteratorInputHandler {
         );
     }
 
+    public Order inputOrder() {
+        return iteratorInputTemplate.execute(
+                inputView::readMenus,
+                new StringToOrderConverter()
+        );
+    }
 }
