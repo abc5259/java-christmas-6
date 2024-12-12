@@ -1,5 +1,7 @@
 package christmas.controller;
 
+import christmas.converter.StringToDateConverter;
+import christmas.domain.Date;
 import christmas.view.InputView;
 
 public class IteratorInputHandler {
@@ -12,5 +14,11 @@ public class IteratorInputHandler {
         this.iteratorInputTemplate = iteratorInputTemplate;
     }
 
+    public Date inputDate() {
+        return iteratorInputTemplate.execute(
+                inputView::readDate,
+                new StringToDateConverter()
+        );
+    }
 
 }
