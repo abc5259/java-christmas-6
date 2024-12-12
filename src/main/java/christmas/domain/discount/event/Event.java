@@ -2,7 +2,9 @@ package christmas.domain.discount.event;
 
 public enum Event {
     CHRISTMAS(new ChristmasDiscount()),
-    WEEKDAY(new WeekDaysDiscount());
+    WEEKDAY(new WeekDaysDiscount()),
+    WEEKEND(new WeekendDiscount()),
+    SPECIAL(new SpecialDiscount());
 
     private final Discount discount;
 
