@@ -4,7 +4,8 @@ public enum Event {
     CHRISTMAS(new ChristmasDiscount()),
     WEEKDAY(new WeekDaysDiscount()),
     WEEKEND(new WeekendDiscount()),
-    SPECIAL(new SpecialDiscount());
+    SPECIAL(new SpecialDiscount()),
+    GIVEAWAY(new GiveawayDiscount());
 
     private final Discount discount;
 
