@@ -23,4 +23,12 @@ public class GiveawayDiscount implements Discount {
     public int calculateDiscountAmount(Date date, Order order) {
         return DISCOUNT_POLICY.calculateDiscountAmount(date, order);
     }
+
+    public Menu calculateGiveawayMenu(Date date, Order order) {
+        if (calculateDiscountAmount(date, order) == 0) {
+            return null;
+        }
+        
+        return Menu.샴페인;
+    }
 }
