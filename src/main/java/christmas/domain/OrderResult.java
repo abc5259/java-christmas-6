@@ -3,6 +3,7 @@ package christmas.domain;
 import christmas.domain.discount.event.Event;
 import christmas.domain.discount.event.GiveawayDiscount;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class OrderResult {
@@ -47,5 +48,9 @@ public class OrderResult {
 
     public Badge getBadge() {
         return Badge.calculateBadge(getTotalBenefitAmount());
+    }
+
+    public List<OrderItem> getOrderItems() {
+        return order.getOrderItems();
     }
 }

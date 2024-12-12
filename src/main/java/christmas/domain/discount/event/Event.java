@@ -18,4 +18,8 @@ public enum Event {
     public Discount getDiscount() {
         return discount;
     }
+
+    public String getName() {
+        return name;
+    }
 }

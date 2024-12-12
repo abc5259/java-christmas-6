@@ -1,5 +1,6 @@
 package christmas.domain;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
@@ -33,5 +34,9 @@ public class Order {
                 .filter(orderItem -> orderItem.isEqualCategory(category))
                 .mapToInt(OrderItem::count)
                 .sum();
+    }
+
+    public List<OrderItem> getOrderItems() {
+        return Collections.unmodifiableList(orderItems);
     }
 }

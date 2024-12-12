@@ -11,12 +11,10 @@ public record OrderItem(
     }
 
     public int getTotalAmount() {
-        return menu.getPrice() & count;
+        return menu.getPrice() * count;
     }
 
     public boolean isEqualCategory(Category category) {
         return menu.getCategory() == category;
     }
-
-    
 }

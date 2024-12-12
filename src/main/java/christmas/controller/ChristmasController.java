@@ -2,10 +2,8 @@ package christmas.controller;
 
 import christmas.domain.Date;
 import christmas.domain.Order;
-import christmas.domain.discount.event.Event;
+import christmas.domain.OrderResult;
 import christmas.view.OutputView;
-import java.util.HashMap;
-import java.util.Map;
 
 public class ChristmasController {
 
@@ -23,11 +21,8 @@ public class ChristmasController {
         Date date = iteratorInputHandler.inputDate();
         Order order = iteratorInputHandler.inputOrder();
 
-        Map<Event, Integer> discountInfos = new HashMap<>();
-        for (Event event : Event.values()) {
-            int discountAmount = event.getDiscount().calculateDiscountAmount(date, order);
-            discountInfos.put(event, discountAmount);
-        }
+        OrderResult orderResult = new OrderResult(date, order);
+        outputView.printOrderResult(orderResult);
     }
 }
 
